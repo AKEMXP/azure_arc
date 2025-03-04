@@ -1681,8 +1681,10 @@ Write-Host "[Build cluster - Step 1/11] Downloading HCIBox VHDs" -ForegroundColo
 $Env:AZCOPY_BUFFER_GB = 4
 Write-Output "Downloading nested VMs VHDX files. This can take some time, hold tight..."
 
-azcopy cp 'https://jumpstartprodsg.blob.core.windows.net/jslocal/hcibox/prod/AzLocal2411.vhdx' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx" --recursive=true --check-length=false --log-level=ERROR
-azcopy cp 'https://jumpstartprodsg.blob.core.windows.net/jslocal/hcibox/prod/AzLocal2411.sha256' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.sha256" --recursive=true --check-length=false --log-level=ERROR
+#azcopy cp 'https://jumpstartprodsg.blob.core.windows.net/jslocal/hcibox/prod/AzLocal2411.vhdx' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx" --recursive=true --check-length=false --log-level=ERROR
+azcopy cp 'https://jumpstartprodsg.blob.core.windows.net/hcibox23h2/hcibox23h2v2.vhdx' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx" --recursive=true --check-length=false --log-level=ERROR
+#EF997499E52A00794EE738DCC1B3FE0CC5188E61A730A5F21BD49A0DB14388FA
+azcopy cp 'https://jumpstartprodsg.blob.core.windows.net/hcibox23h2/hcibox23h2v2.sha256' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.sha256" --recursive=true --check-length=false --log-level=ERROR
 
 <# $checksum = Get-FileHash -Path "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx"
 $hash = Get-Content -Path "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.sha256"
