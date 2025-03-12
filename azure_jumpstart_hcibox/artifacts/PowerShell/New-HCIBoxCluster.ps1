@@ -1682,8 +1682,8 @@ $Env:AZCOPY_BUFFER_GB = 4
 Write-Output "Downloading nested VMs VHDX files. This can take some time, hold tight..."
 
 #azcopy cp 'https://jumpstartprodsg.blob.core.windows.net/jslocal/hcibox/prod/AzLocal2411.vhdx' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx" --recursive=true --check-length=false --log-level=ERROR
-azcopy cp 'https://edgemanagementcopilot.blob.core.windows.net/2408/Asz2408.1.vhdx' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx" --recursive=true --check-length=false --log-level=ERROR
-azcopy cp 'https://edgemanagementcopilot.blob.core.windows.net/2408/Asz2408.1.sha256' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.sha256" --recursive=true --check-length=false --log-level=ERROR
+azcopy cp 'https://edgemanagementcopilot.blob.core.windows.net/2408/HCI2408.vhdx' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx" --recursive=true --check-length=false --log-level=ERROR
+azcopy cp 'https://edgemanagementcopilot.blob.core.windows.net/2408/HCI2408.sha256' "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.sha256" --recursive=true --check-length=false --log-level=ERROR
 
 <# $checksum = Get-FileHash -Path "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.vhdx"
 $hash = Get-Content -Path "$($HCIBoxConfig.Paths.VHDDir)\AZSHCI.sha256"
